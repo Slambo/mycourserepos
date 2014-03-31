@@ -1,0 +1,3 @@
+C:\Users\course>bio-table
+C:\Users\course>bio-table table1.csv --column-filter 'colname !~ /infected/i'
+C:\Users\course>bio-table table1.csv --in-format csv --format tab > mytest.tab
