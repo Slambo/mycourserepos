@@ -1,0 +1,105 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\course>ruby -v
+ruby 2.0.0p451 (2014-02-24) [i386-mingw32]
+
+C:\Users\course>gem install bio-table
+Fetching: log4r-1.1.10.gem (100%)
+Successfully installed log4r-1.1.10
+Fetching: bio-logger-1.0.1.gem (100%)
+Successfully installed bio-logger-1.0.1
+Fetching: bio-table-0.9.0.gem (100%)
+Successfully installed bio-table-0.9.0
+Parsing documentation for log4r-1.1.10
+Installing ri documentation for log4r-1.1.10
+Parsing documentation for bio-logger-1.0.1
+Installing ri documentation for bio-logger-1.0.1
+Parsing documentation for bio-table-0.9.0
+Installing ri documentation for bio-table-0.9.0
+3 gems installed
+
+C:\Users\course>bio-table
+bio-table 0.9.0 Copyright (C) 2012 Pjotr Prins <pjotr.prins@thebird.nl>
+
+
+bio-table transforms, filters and reorders table files (CSV, tab-delimited).
+
+Usage: bio-table [options] filename
+
+        --num-filter expression      Numeric filtering function
+        --filter expression          Generic filtering function
+        --rewrite expression         Rewrite function
+        --columns list               List of column names or indices
+        --column-filter expression   Column name filtering function
+        --diff list                  Diff two input files on columns (default ro
+wnames)
+        --overlap list               Find overlap of two input files on columns)
+
+        --merge                      Merge tables by rowname
+
+        Overrides:
+
+        --skip lines                 Skip the first lines before parsing
+        --with-headers               Include the header element in filtering etc
+.
+        --with-rownames              Include the rownames in filtering etc.
+        --unshift-headers            Add an extra header element at the front (h
+eader contains one fewer field than the number of columns)
+        --strip-quotes               Strip quotes from table fields
+
+        Transform:
+
+        --transform-ids [downcase,upcase]
+                                     Transform column and row identifiers
+
+        Format and options:
+
+        --in-format [tab,csv,split,regex]
+                                     Input format (default tab)
+        --format [tab,csv,rdf,eval]  Output format (default tab)
+        --split-on command           Split on string or regex (use with --in-for
+mat)
+    -e command                       Evaluate output command (use with --format
+eval)
+        --fasta regex                Read FASTA format creating ID with regex
+        --blank-nodes                Output (RDF) blank nodes - allowing for dup
+licate row names
+        --statistics                 Output column statistics
+
+        Verbosity:
+
+        --logger filename            Log to file (default stderr)
+        --trace options              Set log level (default INFO, see bio-logger
+)
+    -q, --quiet                      Run quietly
+    -v, --verbose                    Run verbosely
+        --debug                      Show debug messages
+
+    -h, --help                       Display this help and exit
+
+bio-table transforms, filters and reorders table files (CSV, tab-delimited).
+
+ INFO bio-table: Array: [{:show_help=>true, :write_header=>true, :skip=>0}]
+
+C:\Users\course>bio-table table1.csv --in-format csv --format tab > mytest.tab
+bio-table 0.9.0 Copyright (C) 2012 Pjotr Prins <pjotr.prins@thebird.nl>
+
+ INFO bio-table: Array: [{:show_help=>false, :write_header=>true, :skip=>0, :in_
+format=>:csv, :format=>:tab}]
+ INFO bio-table: Array: ["#Gene", "AJ", "B6", "Axb1", "Axb2", "Axb4", "Axb12", "
+AXB13", "Axb15", "Axb19", "Axb23", "Axb24", "Bxa1", "Bxa2", "Bxa4", "Bxa7", "Bxa
+8", "Bxa12", "Bxa11", "Bxa13", "Bxa15", "Bxa16", "Axb5", "Axb6", "Axb8", "Axb1",
+ "Bxa24", "Bxa25", "Bxa26", "gene_symbol", "gene_desc"]
+
+C:\Users\course>bio-table table1.csv --in-format csv --format tab > mytest.tab
+bio-table 0.9.0 Copyright (C) 2012 Pjotr Prins <pjotr.prins@thebird.nl>
+
+ INFO bio-table: Array: [{:show_help=>false, :write_header=>true, :skip=>0, :in_
+format=>:csv, :format=>:tab}]
+ INFO bio-table: Array: ["#Gene", "AJ", "B6", "Axb1", "Axb2", "Axb4", "Axb12", "
+AXB13", "Axb15", "Axb19", "Axb23", "Axb24", "Bxa1", "Bxa2", "Bxa4", "Bxa7", "Bxa
+8", "Bxa12", "Bxa11", "Bxa13", "Bxa15", "Bxa16", "Axb5", "Axb6", "Axb8", "Axb1",
+ "Bxa24", "Bxa25", "Bxa26", "gene_symbol", "gene_desc"]
+
+C:\Users\course>
